@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane cache="true" cacheHint="SPEED" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="872.0" style="-fx-background-color: #f2f4f5;" stylesheets="@style/main.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java.app.controllers.MainController">
+   <AnchorPane cache="true" cacheHint="SPEED" layoutY="14.0" prefHeight="573.0" prefWidth="245.0" style="-fx-background-color: #ff6600; -fx-background-radius: 0 20 20 0; -fx-border-radius: 20;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="14.0">
+      <ImageView fx:id="userAvatar" cache="true" cacheHint="QUALITY" fitHeight="160.0" fitWidth="160.0" layoutX="43.0" layoutY="37.0" pickOnBounds="true" style="-fx-border-radius: 20; -fx-background-radius: 20;">
+         <Image url="@img/user.png" />
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+         <Label fx:id="userDisplayName" alignment="CENTER" cache="true" cacheHint="SPEED" layoutX="43.0" layoutY="221.0" prefHeight="25.0" prefWidth="160.0" text="Пользователь" textFill="#433a35" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="221.0">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
+         <VBox alignment="TOP_CENTER" cache="true" cacheHint="SPEED" layoutX="26.0" layoutY="270.0" prefHeight="204.0" prefWidth="192.0" spacing="5.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="270.0">
+               <JFXButton fx:id="studentsBtn" cache="true" cacheHint="SPEED" onAction="#onStudentsAction" prefHeight="33.0" prefWidth="192.0" styleClass="btn" text="Студенты" textFill="#1a1918">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </JFXButton>
+               <JFXButton fx:id="parentsBtn" cache="true" cacheHint="SPEED" onAction="#onParentsAction" prefHeight="34.0" prefWidth="218.0" styleClass="btn" text="Родители" textFill="#1b191a">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </JFXButton>
+               <JFXButton fx:id="performancesBtn" cache="true" cacheHint="SPEED" onAction="#onPerformancesAction" prefHeight="36.0" prefWidth="195.0" styleClass="btn" text="Успеваемость" textFill="#1b191a">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </JFXButton>
+               <JFXButton fx:id="settingsBtn" cache="true" cacheHint="SPEED" onAction="#onSettingsAction" prefHeight="34.0" prefWidth="218.0" styleClass="btn" text="Настройки" textFill="#1b191a">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </JFXButton>
+               <JFXButton fx:id="logoutBtn" cache="true" cacheHint="SPEED" onAction="#onLogoutAction" prefHeight="35.0" prefWidth="198.0" styleClass="btn" text="Выход" textFill="#1b191a">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </JFXButton>
+         </VBox>
+      <styleClass>
+         <String fx:value="shadow" />
+      </styleClass>
+      </AnchorPane>
+   <AnchorPane cache="true" cacheHint="SPEED" layoutX="270.0" layoutY="14.0" prefHeight="573.0" prefWidth="602.0" style="-fx-background-color: #e6e6e6; -fx-background-radius: 20 0 0 20; -fx-border-radius: 20;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+      <styleClass>
+         <String fx:value="shadow" />
+      </styleClass>
+      <AnchorPane fx:id="studentsPane" layoutX="13.0" layoutY="15.0" prefHeight="542.0" prefWidth="575.0" style="-fx-background-radius: 20; -fx-background-color: #f2f4f5;" styleClass="shadow" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="58.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TextField fx:id="searchStudentField" layoutX="14.0" layoutY="24.0" onAction="#onSearchStudentClicked" promptText="Запрос" />
+               <Button fx:id="findStudentBtn" layoutX="174.0" layoutY="24.0" mnemonicParsing="false" onAction="#onSearchStudentClicked" prefHeight="25.0" prefWidth="23.0">
+                  <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="SEARCH" selectionFill="#666666" />
+                  </graphic>
+               </Button>
+               <Button fx:id="addStudentBtn" layoutX="209.0" layoutY="24.0" mnemonicParsing="false" onAction="#onAddUserClicked" prefHeight="25.0" prefWidth="23.0">
+                  <graphic>
+                     <FontAwesomeIconView accessibleRole="BUTTON" glyphName="PLUS" selectionFill="#666666" text="" />
+                  </graphic>
+               </Button>
+               <Button fx:id="deleteStudentBtn" layoutX="244.0" layoutY="24.0" mnemonicParsing="false" onAction="#onDeleteUserClicked" prefHeight="25.0" prefWidth="23.0">
+                  <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                  </graphic>
+               </Button>
+            <Button fx:id="editStudentBtn" layoutX="278.0" layoutY="24.0" mnemonicParsing="false" onAction="#onEditStudentClicked" prefHeight="25.0" prefWidth="22.0">
+               <graphic>
+                  <FontAwesomeIconView accessibleRole="BUTTON" glyphName="EDIT" selectionFill="#666666" />
+               </graphic>
+            </Button>
+               <Button fx:id="refreshStudentsBtn" layoutX="315.0" layoutY="24.0" mnemonicParsing="false" onAction="#onRefreshStudentsClicked" prefHeight="25.0" prefWidth="22.0">
+                  <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REFRESH" selectionFill="#666666" />
+                  </graphic>
+               </Button>
+                </AnchorPane>
+                <AnchorPane layoutY="58.0" minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                  <TableView fx:id="studentsTable" editable="true" layoutX="13.0" layoutY="4.0" prefHeight="464.0" prefWidth="547.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="studentCardId" prefWidth="98.0" text="Номер книжки" />
+                      <TableColumn fx:id="studentFullName" prefWidth="83.0" text="Фио" />
+                      <TableColumn fx:id="studentGender" prefWidth="68.0" text="Пол" />
+                      <TableColumn fx:id="studentDayOfBirth" prefWidth="106.0" text="Дата рождения" />
+                      <TableColumn fx:id="studentAddress" prefWidth="96.0" text="Адрес" />
+                      <TableColumn fx:id="studentPhone" prefWidth="95.0" text="Телефон" />
+                    </columns>
+                  </TableView>
+               <AnchorPane fx:id="addStudentPane" layoutX="77.0" layoutY="70.0" prefHeight="322.0" prefWidth="410.0" style="-fx-background-color: #f2f4f5; -fx-border-color: #bdbebe; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                     <Label layoutX="26.0" layoutY="14.0" text="Добавление студента">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="26.0" layoutY="52.0" text="Номер книжки" />
+                     <TextField fx:id="addStudentCardIdField" layoutX="26.0" layoutY="76.0" />
+                     <Label layoutX="26.0" layoutY="115.0" text="Фио" />
+                     <TextArea fx:id="addStudentFullNameField" layoutX="26.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                     <Label layoutX="26.0" layoutY="202.0" text="Пол" />
+                     <ComboBox fx:id="addStudentGenderComboBox" layoutX="26.0" layoutY="229.0" prefWidth="150.0" />
+                     <Label layoutX="224.0" layoutY="52.0" text="Дата рождения" />
+                     <DatePicker fx:id="addStudentDateOfBirthField" editable="false" layoutX="222.0" layoutY="76.0" prefHeight="25.0" prefWidth="149.0" />
+                     <Label layoutX="223.0" layoutY="115.0" text="Адрес" />
+                     <TextArea fx:id="addStudentAddressField" layoutX="223.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                     <Label layoutX="223.0" layoutY="202.0" text="Телефон" />
+                     <TextField fx:id="addStudentPhoneField" layoutX="223.0" layoutY="229.0" />
+                     <Button fx:id="addStudentConfirmBtn" layoutX="51.0" layoutY="272.0" mnemonicParsing="false" onAction="#addStudentAction" prefHeight="25.0" prefWidth="101.0" text="Добавить" />
+                     <Button fx:id="cancelAddStudentBtn" layoutX="247.0" layoutY="272.0" mnemonicParsing="false" onAction="#hideAddStudentPaneAction" prefHeight="25.0" prefWidth="101.0" text="Отмена" />
+                     <Button fx:id="hideAddStudentPaneBtn" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#hideAddStudentPaneAction" prefHeight="25.0" prefWidth="23.0">
+                        <graphic>
+                           <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                        </graphic>
+                     </Button>
+               </AnchorPane>
+            <AnchorPane fx:id="editStudentPane" layoutX="87.0" layoutY="80.0" prefHeight="322.0" prefWidth="410.0" style="-fx-background-color: #f2f4f5; -fx-border-color: #bdbebe; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                  <Label layoutX="26.0" layoutY="14.0" text="Изменение студента">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="26.0" layoutY="52.0" text="Номер книжки" />
+                  <TextField fx:id="editStudentCardIdField" editable="false" layoutX="26.0" layoutY="76.0" />
+                  <Label layoutX="26.0" layoutY="115.0" text="Фио" />
+                  <TextArea fx:id="editStudentFullNameField" layoutX="26.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                  <Label layoutX="26.0" layoutY="202.0" text="Пол" />
+                  <ComboBox fx:id="editStudentGenderComboBox" layoutX="26.0" layoutY="229.0" prefWidth="150.0" />
+                  <Label layoutX="224.0" layoutY="52.0" text="Дата рождения" />
+                  <DatePicker fx:id="editStudentDateOfBirthField" editable="false" layoutX="222.0" layoutY="76.0" prefHeight="25.0" prefWidth="149.0" />
+                  <Label layoutX="223.0" layoutY="115.0" text="Адрес" />
+                  <TextArea fx:id="editStudentAddressField" layoutX="223.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                  <Label layoutX="223.0" layoutY="202.0" text="Телефон" />
+                  <TextField fx:id="editStudentPhoneField" layoutX="223.0" layoutY="229.0" />
+                  <Button fx:id="editStudentConfirmBtn" layoutX="51.0" layoutY="272.0" mnemonicParsing="false" onAction="#editStudentAction" prefHeight="25.0" prefWidth="101.0" text="Изменить" />
+                  <Button fx:id="cancelEditStudentBtn" layoutX="247.0" layoutY="272.0" mnemonicParsing="false" onAction="#hideEditStudentPaneAction" prefHeight="25.0" prefWidth="101.0" text="Отмена" />
+                  <Button fx:id="hideEditStudentPaneBtn" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#hideEditStudentPaneAction" prefHeight="25.0" prefWidth="23.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                     </graphic>
+                  </Button>
+            </AnchorPane>
+                </AnchorPane>
+      </AnchorPane>
+      <AnchorPane fx:id="parentsPane" layoutX="24.0" layoutY="24.0" prefHeight="542.0" prefWidth="575.0" style="-fx-background-radius: 20; -fx-background-color: #f2f4f5;" styleClass="shadow" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="58.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TextField fx:id="searchParentField" layoutX="14.0" layoutY="24.0" onAction="#onSearchParentClicked" promptText="Запрос" />
+                  <Button fx:id="findParentBtn" layoutX="174.0" layoutY="24.0" mnemonicParsing="false" onAction="#onSearchParentClicked" prefHeight="25.0" prefWidth="23.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="SEARCH" selectionFill="#666666" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="addParentBtn" layoutX="209.0" layoutY="24.0" mnemonicParsing="false" onAction="#onAddParentClicked" prefHeight="25.0" prefWidth="23.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="PLUS" selectionFill="#666666" text="" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="deleteParentBtn" layoutX="244.0" layoutY="24.0" mnemonicParsing="false" onAction="#onDeleteParentClicked" prefHeight="25.0" prefWidth="23.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="editParentBtn" layoutX="278.0" layoutY="24.0" mnemonicParsing="false" onAction="#onEditParentClicked" prefHeight="25.0" prefWidth="22.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="EDIT" selectionFill="#666666" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="refreshParentsBtn" layoutX="315.0" layoutY="24.0" mnemonicParsing="false" onAction="#onRefreshParentsClicked" prefHeight="25.0" prefWidth="22.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REFRESH" selectionFill="#666666" />
+                     </graphic>
+                  </Button>
+            </AnchorPane>
+            <AnchorPane layoutY="58.0" minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                  <TableView fx:id="parentsTable" editable="true" layoutX="13.0" layoutY="4.0" prefHeight="464.0" prefWidth="547.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="parentFullName" minWidth="30.0" prefWidth="83.0" text="Фио" />
+                        <TableColumn fx:id="parentWorkPhone" minWidth="115.0" prefWidth="115.0" text="Рабочий телефон" />
+                        <TableColumn fx:id="parentAddress" minWidth="60.0" prefWidth="111.0" text="Адрес" />
+                        <TableColumn fx:id="parentStudent" minWidth="60.0" prefWidth="98.0" text="Студент" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane fx:id="addParentPane" layoutX="84.0" layoutY="85.0" prefHeight="257.0" prefWidth="410.0" style="-fx-background-color: #f2f4f5; -fx-border-color: #bdbebe; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                        <Label layoutX="26.0" layoutY="14.0" text="Добавление родителя">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="52.0" text="Рабочий телефон" />
+                        <TextField fx:id="addParentPhoneField" layoutX="26.0" layoutY="76.0" />
+                        <Label layoutX="26.0" layoutY="115.0" text="Фио" />
+                        <TextArea fx:id="addParentFullNameField" layoutX="26.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                        <Label layoutX="223.0" layoutY="50.0" text="Студент" />
+                        <ComboBox fx:id="addParentStudentComboBox" layoutX="223.0" layoutY="77.0" prefWidth="150.0" />
+                        <Label layoutX="223.0" layoutY="115.0" text="Адрес" />
+                        <TextArea fx:id="addParentAddressField" layoutX="223.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                        <Button fx:id="addParentConfirmBtn" layoutX="50.0" layoutY="208.0" mnemonicParsing="false" onAction="#addParentAction" prefHeight="25.0" prefWidth="101.0" text="Добавить" />
+                        <Button fx:id="cancelAddParentBtn" layoutX="247.0" layoutY="208.0" mnemonicParsing="false" onAction="#hideAddParentPaneAction" prefHeight="25.0" prefWidth="101.0" text="Отмена" />
+                        <Button fx:id="hideAddParentPaneBtn" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#hideAddParentPaneAction" prefHeight="25.0" prefWidth="23.0">
+                           <graphic>
+                              <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                           </graphic>
+                        </Button>
+                  </AnchorPane>
+            <AnchorPane fx:id="editParentPane" layoutX="94.0" layoutY="95.0" prefHeight="257.0" prefWidth="410.0" style="-fx-background-color: #f2f4f5; -fx-border-color: #bdbebe; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                  <Label layoutX="26.0" layoutY="14.0" text="Изменение родителя">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="26.0" layoutY="52.0" text="Рабочий телефон" />
+                  <TextField fx:id="editParentPhoneField" layoutX="26.0" layoutY="76.0" />
+                  <Label layoutX="26.0" layoutY="115.0" text="Фио" />
+                  <TextArea fx:id="editParentFullNameField" layoutX="26.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                  <Label layoutX="223.0" layoutY="50.0" text="Студент" />
+                  <ComboBox fx:id="editParentStudentComboBox" layoutX="223.0" layoutY="77.0" prefWidth="150.0" />
+                  <Label layoutX="223.0" layoutY="115.0" text="Адрес" />
+                  <TextArea fx:id="editParentAddressField" layoutX="223.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                  <Button fx:id="editParentConfirmBtn" layoutX="50.0" layoutY="208.0" mnemonicParsing="false" onAction="#editParentAction" prefHeight="25.0" prefWidth="101.0" text="Изменить" />
+                  <Button fx:id="cancelEditParentBtn" layoutX="247.0" layoutY="208.0" mnemonicParsing="false" onAction="#hideEditParentPaneAction" prefHeight="25.0" prefWidth="101.0" text="Отмена" />
+                  <Button fx:id="hideEditParentPaneBtn" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#hideEditParentPaneAction" prefHeight="25.0" prefWidth="23.0">
+                     <graphic>
+                        <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                     </graphic>
+                  </Button>
+            </AnchorPane>
+            </AnchorPane>
+      </AnchorPane>
+       <AnchorPane fx:id="performancesPane" layoutX="24.0" layoutY="24.0" prefHeight="542.0" prefWidth="575.0" style="-fx-background-radius: 20; -fx-background-color: #f2f4f5;" styleClass="shadow" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="58.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <TextField fx:id="searchPerformanceField" layoutX="14.0" layoutY="24.0" onAction="#onSearchPerformanceClicked" promptText="Запрос" />
+           <Button fx:id="findPerformanceBtn" layoutX="174.0" layoutY="24.0" mnemonicParsing="false" onAction="#onSearchPerformanceClicked" prefHeight="25.0" prefWidth="23.0">
+               <graphic>
+                   <FontAwesomeIconView accessibleRole="BUTTON" glyphName="SEARCH" selectionFill="#666666" />
+               </graphic>
+           </Button>
+           <Button fx:id="addPerformanceBtn" layoutX="209.0" layoutY="24.0" mnemonicParsing="false" onAction="#onAddPerformanceClicked" prefHeight="25.0" prefWidth="23.0">
+               <graphic>
+                   <FontAwesomeIconView accessibleRole="BUTTON" glyphName="PLUS" selectionFill="#666666" text="" />
+               </graphic>
+           </Button>
+           <Button fx:id="deletePerformanceBtn" layoutX="244.0" layoutY="24.0" mnemonicParsing="false" onAction="#onDeletePerformanceClicked" prefHeight="25.0" prefWidth="23.0">
+               <graphic>
+                   <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+               </graphic>
+           </Button>
+           <Button fx:id="editPerformanceBtn" layoutX="278.0" layoutY="24.0" mnemonicParsing="false" onAction="#onEditPerformanceClicked" prefHeight="25.0" prefWidth="22.0">
+               <graphic>
+                   <FontAwesomeIconView accessibleRole="BUTTON" glyphName="EDIT" selectionFill="#666666" />
+               </graphic>
+           </Button>
+           <Button fx:id="refreshPerformancesBtn" layoutX="315.0" layoutY="24.0" mnemonicParsing="false" onAction="#onRefreshPerformancesClicked" prefHeight="25.0" prefWidth="22.0">
+               <graphic>
+                   <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REFRESH" selectionFill="#666666" />
+               </graphic>
+           </Button>
+       </AnchorPane>
+            <AnchorPane layoutY="58.0" minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+               <TableView fx:id="performancesTable" editable="true" layoutX="13.0" layoutY="4.0" prefHeight="464.0" prefWidth="547.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                         <TableColumn fx:id="performanceStudent" minWidth="60.0" prefWidth="98.0" text="Студент" />
+                         <TableColumn fx:id="performanceDate" minWidth="115.0" prefWidth="115.0" text="Дата" />
+                        <TableColumn fx:id="performanceSubject" minWidth="30.0" prefWidth="83.0" text="Предмет" />
+                        <TableColumn fx:id="performanceGrade" minWidth="60.0" prefWidth="111.0" text="Оценка" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane fx:id="addPerformancePane" layoutX="84.0" layoutY="85.0" prefHeight="257.0" prefWidth="410.0" style="-fx-background-color: #f2f4f5; -fx-border-color: #bdbebe; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                     <Label layoutX="26.0" layoutY="14.0" text="Добавление успеваемости">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="52.0" text="Дата" />
+                        <DatePicker fx:id="addPerformanceDateField" layoutX="26.0" layoutY="76.0" />
+                        <Label layoutX="26.0" layoutY="115.0" text="Предмет" />
+                        <TextArea fx:id="addPerformanceSubjectField" layoutX="26.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                        <Label layoutX="223.0" layoutY="50.0" text="Студент" />
+                        <ComboBox fx:id="addPerformanceStudentComboBox" layoutX="223.0" layoutY="77.0" prefWidth="150.0" />
+                        <Label layoutX="223.0" layoutY="115.0" text="Оценка" />
+                        <TextField fx:id="addPerformanceGradeField" layoutX="224.0" layoutY="140.0" />
+                        <Button fx:id="addPerformanceConfirmBtn" layoutX="50.0" layoutY="208.0" mnemonicParsing="false" onAction="#addPerformanceAction" prefHeight="25.0" prefWidth="101.0" text="Добавить" />
+                        <Button fx:id="cancelAddPerformanceBtn" layoutX="247.0" layoutY="208.0" mnemonicParsing="false" onAction="#hideAddPerformancePaneAction" prefHeight="25.0" prefWidth="101.0" text="Отмена" />
+                        <Button fx:id="hideAddPerformancePaneBtn" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#hideAddPerformancePaneAction" prefHeight="25.0" prefWidth="23.0">
+                           <graphic>
+                              <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                           </graphic>
+                        </Button>
+                  </AnchorPane>
+                  <AnchorPane fx:id="editPerformancePane" layoutX="94.0" layoutY="95.0" prefHeight="257.0" prefWidth="410.0" style="-fx-background-color: #f2f4f5; -fx-border-color: #bdbebe; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                     <Label layoutX="26.0" layoutY="14.0" text="Изменение успеваемости">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="52.0" text="Дата" />
+                        <DatePicker fx:id="editPerformanceDateField" layoutX="26.0" layoutY="76.0" />
+                        <Label layoutX="26.0" layoutY="115.0" text="Предмет" />
+                        <TextArea fx:id="editPerformanceSubjectField" layoutX="26.0" layoutY="140.0" prefHeight="46.0" prefWidth="149.0" wrapText="true" />
+                        <Label layoutX="223.0" layoutY="50.0" text="Студент" />
+                        <ComboBox fx:id="editPerformanceStudentComboBox" layoutX="223.0" layoutY="77.0" prefWidth="150.0" />
+                        <Label layoutX="223.0" layoutY="115.0" text="Оценка" />
+                        <TextField fx:id="editPerformanceGradeField" layoutX="224.0" layoutY="140.0" />
+                        <Button fx:id="editPerformanceConfirmBtn" layoutX="50.0" layoutY="208.0" mnemonicParsing="false" onAction="#editPerformanceAction" prefHeight="25.0" prefWidth="101.0" text="Изменить" />
+                        <Button fx:id="cancelEditPerformanceBtn" layoutX="247.0" layoutY="208.0" mnemonicParsing="false" onAction="#hideEditPerformancePaneAction" prefHeight="25.0" prefWidth="101.0" text="Отмена" />
+                        <Button fx:id="hideEditPerformancePaneBtn" layoutX="375.0" layoutY="8.0" mnemonicParsing="false" onAction="#hideEditPerformancePaneAction" prefHeight="25.0" prefWidth="23.0">
+                           <graphic>
+                              <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                           </graphic>
+                        </Button>
+                  </AnchorPane>
+            </AnchorPane>
+      </AnchorPane>
+      <AnchorPane fx:id="settingsPane" layoutX="24.0" layoutY="24.0" prefHeight="542.0" prefWidth="575.0" style="-fx-background-radius: 20; -fx-background-color: #f2f4f5;" styleClass="shadow" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="58.0" prefWidth="573.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <Label layoutX="14.0" layoutY="6.0" style="-fx-font-size: 18;" text="Данные аккаунта" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="10.0">
+             <font>
+                <Font size="18.0" />
+             </font>
+          </Label>
+            <JFXButton fx:id="deleteBtn" cache="true" cacheHint="SPEED" layoutX="367.0" layoutY="497.0" onAction="#onDeleteAccountAction" prefHeight="33.0" prefWidth="192.0" styleClass="btn" text="Удалить аккаунт" textFill="#1a1918" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+          <VBox fx:id="settingsList" layoutX="15.0" layoutY="55.0" minHeight="65.0" prefHeight="65.0" prefWidth="548.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0">
+
+          </VBox>
+          <Label layoutX="14.0" layoutY="31.0" text="Видны только вам" textFill="#999999" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0" />
+            <AnchorPane fx:id="settingsChangeNamePane" layoutX="175.0" layoutY="207.0" prefHeight="146.0" prefWidth="245.0" style="-fx-background-color: #f2f4f5; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+               <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="210.0" text="Изменение имени пользователя" wrapText="true" />
+              <TextField fx:id="settingsNewNameField" layoutX="14.0" layoutY="67.0" onAction="#changeNameAction" prefHeight="30.0" prefWidth="210.0" promptText="Новое имя" />
+              <JFXButton fx:id="settingsSaveNewNameBtn" layoutX="14.0" layoutY="104.0" onAction="#changeNameAction" prefHeight="28.0" prefWidth="99.0" styleClass="text-btn" text="ОК" />
+              <JFXButton fx:id="settingsHideChangeNamePaneBtn" layoutX="123.0" layoutY="104.0" onAction="#toggleNameAction" prefHeight="28.0" prefWidth="99.0" styleClass="text-btn" text="Отмена" />
+            </AnchorPane>
+            <AnchorPane fx:id="settingsChangePasswordPane" layoutX="175.0" layoutY="209.0" prefHeight="146.0" prefWidth="245.0" style="-fx-background-color: #f2f4f5; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                  <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="210.0" text="Изменение пароля" wrapText="true" />
+                  <PasswordField fx:id="settingsNewPasswordField" layoutX="14.0" layoutY="61.0" onAction="#changePasswordAction" prefHeight="25.0" prefWidth="210.0" promptText="Новый пароль" />
+                  <JFXButton fx:id="settingsSaveNewPasswordBtn" layoutX="14.0" layoutY="104.0" onAction="#changePasswordAction" prefHeight="28.0" prefWidth="99.0" styleClass="text-btn" text="ОК" />
+                  <JFXButton fx:id="settingsHideChangePasswordPaneBtn" layoutX="123.0" layoutY="104.0" onAction="#togglePasswordAction" prefHeight="28.0" prefWidth="99.0" styleClass="text-btn" text="Отмена" />
+            </AnchorPane>
+             <AnchorPane fx:id="settingsChangeAvatarPane" layoutX="172.0" layoutY="209.0" prefHeight="146.0" prefWidth="251.0" style="-fx-background-color: #f2f4f5; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+                 <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="210.0" text="Изменение аватара" wrapText="true" />
+                 <TextField fx:id="settingsNewAvatarField" layoutX="14.0" layoutY="61.0" prefHeight="25.0" prefWidth="191.0" />
+                 <Button fx:id="openAvatarBtn" layoutX="211.0" layoutY="60.0" mnemonicParsing="false" onAction="#openFileAction" prefHeight="20.0" prefWidth="26.0" text="...">
+                     <font>
+                         <Font size="10.0" />
+                     </font>
+                 </Button>
+                 <JFXButton fx:id="settingsSaveNewAvatarBtn" layoutX="14.0" layoutY="104.0" onAction="#changeAvatarAction" prefHeight="28.0" prefWidth="99.0" styleClass="text-btn" text="ОК" />
+                 <JFXButton fx:id="settingsHideChangeAvatarBtn" layoutX="138.0" layoutY="105.0" onAction="#toggleAvatarAction" prefHeight="28.0" prefWidth="99.0" styleClass="text-btn" text="Отмена" />
+             </AnchorPane>
+            <AnchorPane fx:id="settingsChangeDateOfBirthPane" layoutX="175.0" layoutY="232.0" prefHeight="100.0" prefWidth="245.0" style="-fx-background-color: #f2f4f5; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="shadow" visible="false">
+               <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="210.0" text="Изменение даты рождения" wrapText="true" />
+                  <DatePicker fx:id="settingsNewDateOfBirthField" editable="false" layoutX="14.0" layoutY="61.0" onAction="#changeDateOfBirthAction" prefHeight="25.0" prefWidth="217.0" />
+               <Button fx:id="hideChangeDateOfBirthPaneBtn" layoutX="205.0" layoutY="9.0" mnemonicParsing="false" onAction="#toggleDateOfBirthAction" prefHeight="25.0" prefWidth="26.0">
+                  <graphic>
+                     <FontAwesomeIconView accessibleRole="BUTTON" glyphName="REMOVE" selectionFill="#666666" />
+                  </graphic>
+               </Button>
+            </AnchorPane>
+        </AnchorPane>
+      </AnchorPane>
+      </AnchorPane>
+</AnchorPane>

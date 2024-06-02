@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>E:\MultimediaFiles\Programming\MyProgramms\Java\StudentHub\out\artifacts\StudentHub_main_jar\StudentHub.main.jar</jar>
+  <outfile>E:\MultimediaFiles\Programming\MyProgramms\Java\StudentHub\out\executable\studentHub.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>E:\MultimediaFiles\Programming\MyProgramms\Java\StudentHub\src\main\resources\drawables\hl2.ico</icon>
+  <singleInstance>
+    <mutexName>studentHub.exe</mutexName>
+    <windowTitle>studentHub.exe</windowTitle>
+  </singleInstance>
+  <classPath>
+    <mainClass>Launcher</mainClass>
+    <cp>com.java.studentHub.Launcher</cp>
+  </classPath>
+  <jre>
+    <path>JRE</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.2.0.0</fileVersion>
+    <txtFileVersion>1.2 Cupcake</txtFileVersion>
+    <fileDescription>App for storing data about students, parents and performance.</fileDescription>
+    <copyright>Roman Java</copyright>
+    <productVersion>1.2.0.0</productVersion>
+    <txtProductVersion>1.2 Cupcake</txtProductVersion>
+    <productName>StudentHub</productName>
+    <companyName>Roman Java</companyName>
+    <internalName>StudentHub</internalName>
+    <originalFilename>StudentHub.exe</originalFilename>
+    <trademarks>Roman Java</trademarks>
+    <language>RUSSIAN</language>
+  </versionInfo>
+  <messages>
+    <startupErr>StudentHub startup error.</startupErr>
+    <jreNotFoundErr>StudentHub requires Java Runtime Environment.</jreNotFoundErr>
+    <jreVersionErr>StudentHub requires Java Runtime Environment version.</jreVersionErr>
+    <launcherErr>Registry links to non-existing Java Runtime Environment, or there is startup error.</launcherErr>
+    <instanceAlreadyExistsMsg>StudentHub already running.</instanceAlreadyExistsMsg>
+  </messages>
+</launch4jConfig>

@@ -1,0 +1,38 @@
+.combo-box-popup .list-view {
+    -fx-text-fill: #f2f4f5;
+    -fx-border-color: #4f4f4f;
+    -fx-background-color: #2b2b2b;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-padding: 4 0 4 5;
+    -fx-text-fill: #f2f4f5;
+    -fx-background-color: #2b2b2b;
+}
+
+.combo-box-base {
+    -fx-padding: 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: #f2f4f5;
+    -fx-border-color: #4f4f4f;
+    -fx-background-color: #2b2b2b;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #f2f4f5;
+}
+
+.combo-box .list-view,
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #2b2b2b;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover,
+.combo-box-popup .list-view .list-cell:filled:selected:hover {
+    -fx-background-color: #4f4f4f99;
+}
+
+.combo-box-popup .list-view .list-cell:filled:pressed,
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: #4f4f4f;
+}

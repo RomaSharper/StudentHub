@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #ff6600;" styleClass="main" stylesheets="@style/auth.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java.app.controllers.SignInController">
+   <AnchorPane layoutX="163.0" layoutY="111.0" prefHeight="336.0" prefWidth="374.0" style="-fx-background-color: #2b2b2b;" AnchorPane.bottomAnchor="163.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="111.0">
+      <Label layoutX="38.0" layoutY="33.0" prefHeight="39.0" prefWidth="166.0" text="Имя пользователя" textFill="#f2f4f5" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="33.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="121.0" prefHeight="35.0" prefWidth="67.0" text="Пароль" textFill="#f2f4f5" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="121.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="usernameField" focusColor="#d0d4f4" layoutX="38.0" layoutY="72.0" prefHeight="35.0" prefWidth="304.0" promptText="Не используйте свое настоящее имя" style="-fx-text-fill: #f2f4f5;" unFocusColor="#4f4f4f" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="72.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="passwordField" focusColor="#d0d4f4" layoutX="40.0" layoutY="156.0" prefHeight="35.0" prefWidth="301.0" promptText="Ваш пароль" style="-fx-text-fill: #f2f4f5;" unFocusColor="#4f4f4f" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="156.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="signOnBtn" layoutX="40.0" layoutY="222.0" onAction="#onSignOnButtonAction" prefHeight="42.0" prefWidth="301.0" style="-fx-text-fill: #f2f4f5; -fx-border-width: 2; -fx-border-color: #393b3d;" text="Вход" textAlignment="CENTER" textFill="#f2f4f5" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="212.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="signUpBtn" layoutX="38.0" layoutY="271.0" onAction="#onGoToSignUpAction" prefHeight="27.0" prefWidth="301.0" style="-fx-text-fill: #f2f4f5; -fx-border-width: 2; -fx-border-color: #393b3d;" text="Регистрация" textAlignment="CENTER" textFill="#f2f4f5" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+   </AnchorPane>
+</AnchorPane>
