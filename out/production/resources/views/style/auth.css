@@ -1,0 +1,7 @@
+.main {
+    -fx-background-size: cover;
+    -fx-background-color: #ff6600;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../img/wallpaper_tf2.jpg);
+}

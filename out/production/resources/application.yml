@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: StudentHub
+  datasource:
+    username: root #db4349
+    password: root #7i@HhQ9=X+y
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db4349 #db4349.public.databaseasp.net:3306/db4349
+  jpa:
+    show-sql: false
+    hibernate.ddl-auto: none
+    properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      naming:
+        physical-strategy:
+          org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  main:
+    web-application-type: none

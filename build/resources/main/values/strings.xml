@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">StudentHub</string>
+
+    <string name="error">Ошибка</string>
+    <string name="success">Успех</string>
+    <string name="exit">Выход</string>
+    <string name="signup">Регистрация</string>
+    <string name="authorization">Авторизация</string>
+    <string name="logout">Выход из аккаунта</string>
+    <string name="exit_confirmation">Вы уверены, что хотите выйти?</string>
+    <string name="logout_confirmation">Вы уверены, что хотите выйти из аккаунта?</string>
+
+    <string name="man">Мужской</string>
+    <string name="woman">Женский</string>
+</resources>

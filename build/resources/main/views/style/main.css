@@ -1,0 +1,44 @@
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6, 0, 0, 0);
+}
+
+.btn {
+    -fx-cursor: hand;
+    -fx-background-color: #fbd5b1;
+}
+
+.btn:hover {
+    -fx-background-color: #ffe5d1;
+}
+
+.btn:pressed {
+    -fx-background-color: #f2f4f5;
+}
+
+.text-btn {
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-background-color: #e6e6e6;
+}
+
+.text-btn:hover {
+    -fx-background-color: #bdbebe;
+}
+
+.text-btn:pressed {
+    -fx-background-color: #999;
+}
+
+.text {
+    -fx-font-size: 14;
+    -fx-text-fill: #4f4f4f;
+}
+
+.title {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+.icon {
+    -fx-alignment: center;
+}

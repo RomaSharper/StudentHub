@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:controller="com.java.app.controllers.MenuItemController" prefHeight="70.0" prefWidth="570.0" stylesheets="@style/main.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+      <Label fx:id="name" layoutX="89.0" layoutY="14.0" styleClass="title" text="Название свойства" />
+      <FontAwesomeIconView fx:id="icon" fill="#4d4d4d00" glyphName="GEAR" layoutX="32.0" layoutY="56.0" size="40" stroke="#4f4f4f" strokeLineCap="ROUND" strokeWidth="2.0" styleClass="icon" wrappingWidth="36.0" />
+      <Label fx:id="currentValue" layoutX="89.0" layoutY="45.0" styleClass="text" text="Текущее значение" />
+      <JFXButton fx:id="changeBtn" layoutX="437.0" layoutY="28.0" prefHeight="30.0" prefWidth="102.0" style="-fx-cursor: hand;" styleClass="text-btn" text="Изменить" />
+   <padding>
+      <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+   </padding>
+</AnchorPane>
