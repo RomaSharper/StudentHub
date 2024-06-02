@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'org.springframework.boot' version '3.3.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+version = '1.2'
+group = 'com.java'
+mainClassName = 'com.java.app.Launcher'
+
+java {
+    sourceCompatibility = '21'
+}
+
+javafx {
+    version = '21'
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.media', 'javafx.graphics' ]
+}
+
+application {
+    mainClass.set(mainClassName)
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'at.favre.lib:bcrypt:0.10.2'
+    implementation files('libs/jfoenix-9.0.1.jar')
+    implementation 'org.jetbrains:annotations:24.0.0'
+    implementation 'de.jensd:fontawesomefx-fontawesome:4.7.0-9.1.2'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+jar {
+    duplicatesStrategy = 'warn'
+}
+
+tasks.jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    exclude("META-INF/*.RSA", "META-INF/*.SF", "META-INF/*.DSA")
+}
