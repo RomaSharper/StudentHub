@@ -2,10 +2,10 @@ spring:
   application:
     name: StudentHub
   datasource:
-    username: db4349
-    password: 7i@HhQ9=X+y
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: db4349.public.databaseasp.net:3306/db4349
+    url: jdbc:mysql://db4349.public.databaseasp.net:3306/db4349
+    username: db4349
+    password: 7i@HhQ9=X+y3
   jpa:
     show-sql: false
     hibernate.ddl-auto: none

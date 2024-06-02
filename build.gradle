@@ -8,7 +8,6 @@ plugins {
 
 version = '1.2'
 group = 'com.java'
-mainClassName = 'com.java.app.Launcher'
 
 java {
     sourceCompatibility = '21'
@@ -17,10 +16,6 @@ java {
 javafx {
     version = '21'
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.media', 'javafx.graphics' ]
-}
-
-application {
-    mainClass.set(mainClassName)
 }
 
 configurations {
@@ -45,20 +40,4 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-jar {
-    duplicatesStrategy = 'warn'
-}
-
-tasks.jar {
-    manifest {
-        attributes 'Main-Class': mainClassName
-    }
-    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-    exclude("META-INF/*.RSA", "META-INF/*.SF", "META-INF/*.DSA")
 }
