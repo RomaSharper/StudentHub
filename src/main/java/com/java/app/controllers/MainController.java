@@ -310,11 +310,8 @@ public class MainController extends ControllerBase implements Initializable {
             ));
             userAvatar.setImage(img);
             userAvatar.setClip(new Circle(80, 80, 80));
-        } catch (Exception ex) {
-            playSound(SoundTracks.ERROR, .6);
-            showError("Не удалось установить аватарку: " + ex.getMessage() + """
-                
-                Если ошибка повторяется, перезагрузите приложение""");
+        } catch (Exception ignored) {
+
         }
     }
 
