@@ -2,12 +2,10 @@ package com.java.app.classes;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import lombok.Getter;
-import lombok.Setter;
 
 public class PasswordSecure {
     @Getter
-    @Setter
-    private static int cost = 12;
+    private static final int cost = 12;
 
     public static String hashPassword(String password) {
         BCrypt.Hasher hasher = BCrypt.withDefaults();

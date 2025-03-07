@@ -41,7 +41,9 @@ public class SignInController extends ControllerBase implements Initializable {
     @FXML
     protected void onSignOnButtonAction(ActionEvent event) {
         try {
-            usersService.authenticate(usernameField.getText(), passwordField.getText());
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            usersService.authenticate(username, password);
             playSound(SoundTracks.ACCESS_GRANTED, .4);
             StageInitializer.setStage(event, Views.MAIN);
         } catch (UserNotFoundException unfe) {

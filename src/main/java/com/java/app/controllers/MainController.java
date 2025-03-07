@@ -481,7 +481,6 @@ public class MainController extends ControllerBase implements Initializable {
         );
     }
 
-    // Students in opened pane
     @FXML
     public void addStudentAction() {
         StringBuilder errors = new StringBuilder();
